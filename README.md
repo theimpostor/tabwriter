@@ -18,7 +18,27 @@ This will install the latest version of osc52 to `$GOPATH/bin`. To find out wher
 
 ## Usage
 ```
-Usage: ./tabwriter [file1 [...fileN]]
-Copies file contents to stdout passing through text.tabwriter
+Usage: tabwriter [file1 [...fileN]]
+Copies file contents to stdout passing through text/tabwriter.
 With no arguments, will read from stdin.
+  -alignRight
+        see https://pkg.go.dev/text/tabwriter
+  -debug
+        see https://pkg.go.dev/text/tabwriter
+  -discardEmptyColumns
+        see https://pkg.go.dev/text/tabwriter
+  -filterHTML
+        see https://pkg.go.dev/text/tabwriter
+  -minwidth int
+        minimal cell width including any padding
+  -padchar string
+        ASCII char used for padding
+  -padding int
+        padding added to a cell before computing its width
+  -stripEscape
+        see https://pkg.go.dev/text/tabwriter
+  -tabIndent
+        see https://pkg.go.dev/text/tabwriter
+  -tabwidth int
+        width of tab characters (equivalent number of spaces)
 ```
