@@ -22,23 +22,23 @@ Usage: tabwriter [file1 [...fileN]]
 Copies file contents to stdout passing through text/tabwriter.
 With no arguments, will read from stdin.
   -alignRight
-        see https://pkg.go.dev/text/tabwriter
+    	see https://pkg.go.dev/text/tabwriter
   -debug
-        see https://pkg.go.dev/text/tabwriter
+    	see https://pkg.go.dev/text/tabwriter
   -discardEmptyColumns
-        see https://pkg.go.dev/text/tabwriter
+    	see https://pkg.go.dev/text/tabwriter
   -filterHTML
-        see https://pkg.go.dev/text/tabwriter
+    	see https://pkg.go.dev/text/tabwriter
   -minwidth int
-        minimal cell width including any padding
+    	minimal cell width including any padding (default 1)
   -padchar string
-        ASCII char used for padding
+    	ASCII char used for padding (default " ")
   -padding int
-        padding added to a cell before computing its width
+    	padding added to a cell before computing its width (default 1)
   -stripEscape
-        see https://pkg.go.dev/text/tabwriter
+    	see https://pkg.go.dev/text/tabwriter
   -tabIndent
-        see https://pkg.go.dev/text/tabwriter
+    	see https://pkg.go.dev/text/tabwriter
   -tabwidth int
-        width of tab characters (equivalent number of spaces)
+    	width of tab characters (equivalent number of spaces) (default 8)
 ```
