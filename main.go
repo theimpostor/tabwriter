@@ -42,11 +42,11 @@ With no arguments, will read from stdin.
 	}
 
 	var minwidth, tabwidth, padding int
-	var padchar string
-	flag.IntVar(&minwidth, "minwidth", 0, "minimal cell width including any padding")
-	flag.IntVar(&tabwidth, "tabwidth", 0, "width of tab characters (equivalent number of spaces)")
-	flag.IntVar(&padding, "padding", 0, "padding added to a cell before computing its width")
-	flag.StringVar(&padchar, "padchar", "", "ASCII char used for padding")
+	var padtext string
+	flag.IntVar(&minwidth, "minwidth", 1, "minimal cell width including any padding")
+	flag.IntVar(&tabwidth, "tabwidth", 8, "width of tab characters (equivalent number of spaces)")
+	flag.IntVar(&padding, "padding", 1, "padding added to a cell before computing its width")
+	flag.StringVar(&padtext, "padchar", " ", "ASCII char used for padding")
 	filterHTML := flag.Bool("filterHTML", false, "see https://pkg.go.dev/text/tabwriter")
 	stripEscape := flag.Bool("stripEscape", false, "see https://pkg.go.dev/text/tabwriter")
 	alignRight := flag.Bool("alignRight", false, "see https://pkg.go.dev/text/tabwriter")
@@ -82,7 +82,11 @@ With no arguments, will read from stdin.
 		fnames = []string{"-"}
 	}
 
-	out := tabwriter.NewWriter(os.Stdout, minwidth, tabwidth, padding, padchar[0], flags)
+	var padchar byte
+	if len(padtext) > 0 {
+		padchar = padtext[0]
+	}
+	out := tabwriter.NewWriter(os.Stdout, minwidth, tabwidth, padding, padchar, flags)
 
 	for _, fname := range fnames {
 		filterFn(fname, out)
