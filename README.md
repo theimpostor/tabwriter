@@ -14,7 +14,7 @@ go install -v github.com/theimpostor/tabwriter@latest
 GO111MODULE=on go get github.com/theimpostor/tabwriter@latest
 ```
 
-This will install the latest version of osc52 to `$GOPATH/bin`. To find out where `$GOPATH` is, run `go env GOPATH`
+This will install the latest version of tabwriter to `$GOPATH/bin`. To find out where `$GOPATH` is, run `go env GOPATH`
 
 ## Usage
 ```
